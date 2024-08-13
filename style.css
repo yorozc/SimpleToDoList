@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    display: flex;
+    gap: 24px;
+    border: 1px solid black;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+#right-text{
+    display: flex;
+    gap: 24px;
+}
+
+#task-container{
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    overflow: visible;
+    justify-content: center;
+    border: 1px solid black;
+    min-height: 600px;
+    min-width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+
+}
+
+.task-card{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid black;
+    height: 200px;
+    width:  175px;
+    
+}
+
+
