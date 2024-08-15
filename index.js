@@ -9,3 +9,11 @@ and incomplete tasks
 - with the history, have a dropdown that shows all, incomplete, deleted
 Maybe create a priority tag for tasks as well
 */
+
+
+const addTask = document.getElementById("task-button");
+addTask.addEventListener("click", ()=>{
+    document.querySelector(".task-card-popup").style.display = "flex";
+    })
+    
+
