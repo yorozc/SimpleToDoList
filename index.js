@@ -10,10 +10,80 @@ and incomplete tasks
 Maybe create a priority tag for tasks as well
 */
 
+const tasks = [];
 
 const addTask = document.getElementById("task-button");
-addTask.addEventListener("click", ()=>{
-    document.querySelector(".task-card-popup").style.display = "flex";
+const taskCardPopup = document.querySelector(".task-card-popup")
+const taskContainer = document.getElementById("task-container");
+const taskCardInput = document.querySelector(".task-card-input");
+const saveTask = document.querySelector(".create-task");
+
+function showTasks(){
+    taskContainer.innerHTML = '';
+    tasks.forEach(task =>{
+        const taskCard = document.createElement("div");
+        taskCard.classList.add("task-card");
+
+        //add the text elements into the task card
+        const titleTaskCard = document.createElement("h1");
+        titleTaskCard.textContent = task.title;
+
+        const contentTaskCard = document.createElement("p");
+        contentTaskCard.textContent = task.content; 
+
+        //append elements to the task card
+        taskCard.appendChild(titleTaskCard);
+        taskCard.appendChild(contentTaskCard);
+        taskContainer.appendChild(taskCard);
     })
+    
+
+}
+
+function createTask(title, content){
+    return {
+        title: title,
+        content: content,
+    };
+}
+
+addTask.addEventListener("click", ()=>{
+    taskCardPopup.style.display = "flex";
+});
+
+
+
+saveTask.addEventListener("click", ()=>{
+    
+    //values from input field
+    const title = document.querySelector(".task-card-title").value;
+    const content = document.querySelector(".content-area").value;
+
+    const newTask = createTask(title, content);
+    tasks.push(newTask);
+    showTasks();
+    document.querySelector(".task-card-title").value = "";
+    document.querySelector(".content-area").value = "";
+    taskCardPopup.style.display = "none";
+    
+});
+
+function clickOutside(event){
+    if(!taskCardInput.contains(event.target) && !addTask.contains(event.target)){
+        taskCardPopup.style.display = "none";
+    }
+}
+
+document.addEventListener("click", clickOutside);
+
+
+//make delete all button
+//make an edit button for the task cards
+//make a save button for the cards
+
+
+
+
+
     
 

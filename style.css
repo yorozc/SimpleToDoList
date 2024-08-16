@@ -42,6 +42,7 @@
     height: 200px;
     width:  175px;
     background-color: white;
+    border-radius: 10px;
 }
 
 .task-card-input{
@@ -53,6 +54,7 @@
     height: 400px;
     width:  300px;
     background-color: white;
+    border-radius: 10px;
 }
 
 .task-card h1{
@@ -92,6 +94,7 @@ input{
     border: 0px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
+    outline: none;
 }
 
 textarea{
@@ -99,6 +102,7 @@ textarea{
     height: 100%;
     resize: none;
     overflow: auto;
+    outline: none;
 }
 
 
