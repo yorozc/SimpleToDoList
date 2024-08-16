@@ -45,6 +45,23 @@
     border-radius: 10px;
 }
 
+.task-card:hover{
+    transform: scale(1.05);
+}
+
+.task-card:hover .taskBtns{
+    display: block;
+}
+
+.taskBtns{
+    display: none;
+}
+
+
+
+
+
+
 .task-card-input{
     display: flex;
     flex-direction: column;
