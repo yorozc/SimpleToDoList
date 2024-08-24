@@ -25,7 +25,7 @@ const contentInput = document.querySelector(".content-area");
 
 
 function showTasks(){
-
+    
     taskContainer.innerHTML = '';
 
     tasks.forEach(task =>{
