@@ -114,6 +114,7 @@ saveTask.addEventListener("click", ()=>{
         const newTask = createTask(title, content);
         tasks.push(newTask);
     }
+    saveTask.textContent = "Create Task";
     showTasks();
     taskCardPopup.removeAttribute("style");
     
@@ -142,6 +143,7 @@ function editButton(editBtn, taskCard){
                 titleInput.value = task.title;
                 contentInput.value = task.content;
                 editingTaskId = taskCard.id
+                saveTask.textContent = "Finish Edit";
                 taskCardPopup.style.display = "flex";
             }else{
                 console.log("Id not found!");
