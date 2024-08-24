@@ -119,7 +119,7 @@ saveTask.addEventListener("click", ()=>{
     taskCardPopup.removeAttribute("style");
     
 });
-
+console.log(taskContainer.childNodes)
 //deletes taskcard from container and task from the list of tasks
 function deleteButton(deleteBtn, taskCard){
     deleteBtn.addEventListener("click", ()=>{
@@ -133,7 +133,19 @@ function deleteButton(deleteBtn, taskCard){
                 console.log("Id not found!");
             }
         })
-    })
+        
+        if (taskContainer.childNodes.length == 0){
+            const placeholder = document.createElement("div");
+            placeholder.id = "placeholder-text";
+            const placeholderText = document.createElement("p");
+            const sealGif = document.createElement("img");
+            placeholderText.textContent = "Done for the day!";
+            sealGif.setAttribute("src", "the-seal-is-swimming.gif");
+            placeholder.appendChild(placeholderText)
+            placeholder.appendChild(sealGif);
+            taskContainer.appendChild(placeholder);
+        }
+    })  
 }
 
 function editButton(editBtn, taskCard){
